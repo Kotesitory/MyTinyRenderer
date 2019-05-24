@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1558695928 source:c:\users\biljana kaeva\desktop\tinyrenderer-myedition\main.cpp
+	"tgaimage.h"
+
+1558694449 c:\users\biljana kaeva\desktop\tinyrenderer-myedition\tgaimage.h
+	<fstream>
+
+1558694395 source:c:\users\biljana kaeva\desktop\tinyrenderer-myedition\tgaimage.cpp
+	<iostream>
+	<fstream>
+	<string.h>
+	<time.h>
+	<math.h>
+	"tgaimage.h"
+
