@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1558704121 source:c:\users\biljana kaeva\desktop\tinyrenderer-myedition\main.cpp
+1560111210 source:c:\users\biljana kaeva\desktop\tinyrenderer-myedition\main.cpp
 	<vector>
 	<cmath>
 	"tgaimage.h"
