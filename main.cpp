@@ -33,6 +33,35 @@ void line(int x0, int y0, int x1, int y1, TGAImage &image, TGAColor color) {
     }
 }
 
+void line(Vec2i v0, Vec2i v1, TGAImage &image, TGAColor color) {
+    bool steep = false;
+    if (std::abs(v0.x-v1.x)<std::abs(v0.y - v1.y)) {
+        std::swap(v0.x, v0.y);
+        std::swap(v1.x, v1.y);
+        steep = true;
+    }
+    if (v0.x > v1.x) {
+        std::swap(v0.x, v1.x);
+        std::swap(v0.y, v1.y);
+    }
+
+    for (int x=v0.x; x<=v1.x; x++) {
+        float t = (x-v0.x)/(float)(v1.x-v0.x);
+        int y = v0.y*(1.-t) + v1.y*t;
+        if (steep) {
+            image.set(y, x, color);
+        } else {
+            image.set(x, y, color);
+        }
+    }
+}
+
+void triangle(Vec2i v0, Vec2i v1, Vec2i v2, TGAImage &image, TGAColor color){
+    line(v0, v1, image, color);
+    line(v0, v2, image, color);
+    line(v1,v2, image, color);
+}
+
 int main(int argc, char** argv) {
     if (2==argc) {
         model = new Model(argv[1]);
@@ -41,20 +70,10 @@ int main(int argc, char** argv) {
     }
 
     TGAImage image(width, height, TGAImage::RGB);
-    for (int i=0; i<model->nfaces(); i++) {
-        std::vector<int> face = model->face(i);
-        for (int j=0; j<3; j++) {
-            Vec3f v0 = model->vert(face[j]);
-            Vec3f v1 = model->vert(face[(j+1)%3]);
-            int x0 = (v0.x+1.)*width/2.;
-            int y0 = (v0.y+1.)*height/2.;
-            int x1 = (v1.x+1.)*width/2.;
-            int y1 = (v1.y+1.)*height/2.;
-            line(x0, y0, x1, y1, image, white);
-        }
-    }
 
-    image.flip_vertically(); // i want to have the origin at the left bottom corner of the image
+    triangle(Vec2i(10, 70), Vec2i(50, 160), Vec2i(70, 80), image, red);
+
+    image.flip_vertically();
     image.write_tga_file("output.tga");
     delete model;
     return 0;

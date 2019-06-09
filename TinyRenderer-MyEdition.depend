@@ -24,3 +24,11 @@
 1558703977 c:\users\biljana kaeva\desktop\tinyrenderer-myedition\geometry.h
 	<cmath>
 
+1558703946 source:c:\users\biljana kaeva\desktop\tinyrenderer-myedition\model.cpp
+	<iostream>
+	<string>
+	<fstream>
+	<sstream>
+	<vector>
+	"model.h"
+
