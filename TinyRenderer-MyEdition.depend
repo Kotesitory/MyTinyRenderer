@@ -1,15 +1,17 @@
 # depslib dependency file v1.0
-1560111210 source:c:\users\biljana kaeva\desktop\tinyrenderer-myedition\main.cpp
+1560261211 source:c:\users\biljana kaeva\desktop\tinyrenderer-myedition\main.cpp
 	<vector>
 	<cmath>
+	<cstdlib>
+	<limits>
 	"tgaimage.h"
 	"model.h"
 	"geometry.h"
 
-1558694449 c:\users\biljana kaeva\desktop\tinyrenderer-myedition\tgaimage.h
+1560261449 c:\users\biljana kaeva\desktop\tinyrenderer-myedition\tgaimage.h
 	<fstream>
 
-1558702282 source:c:\users\biljana kaeva\desktop\tinyrenderer-myedition\tgaimage.cpp
+1560261469 source:c:\users\biljana kaeva\desktop\tinyrenderer-myedition\tgaimage.cpp
 	<iostream>
 	<fstream>
 	<string.h>
@@ -17,14 +19,17 @@
 	<math.h>
 	"tgaimage.h"
 
-1558703945 c:\users\biljana kaeva\desktop\tinyrenderer-myedition\model.h
+1560261432 c:\users\biljana kaeva\desktop\tinyrenderer-myedition\model.h
 	<vector>
 	"geometry.h"
 
-1558703977 c:\users\biljana kaeva\desktop\tinyrenderer-myedition\geometry.h
+1560261327 c:\users\biljana kaeva\desktop\tinyrenderer-myedition\geometry.h
 	<cmath>
+	<vector>
+	<cassert>
+	<iostream>
 
-1558703946 source:c:\users\biljana kaeva\desktop\tinyrenderer-myedition\model.cpp
+1560261378 source:c:\users\biljana kaeva\desktop\tinyrenderer-myedition\model.cpp
 	<iostream>
 	<string>
 	<fstream>
